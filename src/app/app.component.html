@@ -1,0 +1,26 @@
+<div>
+  <h1>
+    {{title}}
+  </h1>
+  <p>
+    Seleccione uno de los dos perfiles.
+  </p>
+
+  <app-user-profile name="Antonio"
+                    lastname="Suárez"
+                    (selected)="onSelected($event)"
+                    >
+  </app-user-profile>
+
+  <app-my-profile name="Gonzalo"
+                    lastname="Muñoz"
+                    (selected)="onSelected($event)"
+                    >
+  </app-my-profile>
+
+  <div *ngIf="userSelected != null" >
+    <p>Usted ha seleccionado a: 
+    <b>{{ userSelected.nombre }}</b>
+  </div>
+
+</div>
